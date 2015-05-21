@@ -15,25 +15,10 @@
  ****************************************************/
 
 #include <Adafruit_Fingerprint.h>
-#if ARDUINO >= 100
- #include <SoftwareSerial.h>
-#else
- #include <NewSoftSerial.h>
-#endif
 
 uint8_t getFingerprintEnroll(uint8_t id);
 
-
-// pin #2 is IN from sensor (GREEN wire)
-// pin #3 is OUT from arduino  (WHITE wire)
-#if ARDUINO >= 100
-SoftwareSerial mySerial(2, 3);
-//#define mySerial Serial1
-#else
-NewSoftSerial mySerial(2, 3);
-#endif
-
-  Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 
 void setup()  
 {
@@ -89,3 +74,4 @@ uint8_t deleteFingerprint(uint8_t id) {
     return p;
   }   
 }
+

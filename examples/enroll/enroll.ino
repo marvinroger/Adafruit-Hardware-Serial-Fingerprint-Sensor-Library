@@ -15,16 +15,10 @@
  ****************************************************/
 
 #include <Adafruit_Fingerprint.h>
-#include <SoftwareSerial.h>
 
 uint8_t getFingerprintEnroll(int id);
 
-
-// pin #2 is IN from sensor (GREEN wire)
-// pin #3 is OUT from arduino  (WHITE wire)
-SoftwareSerial mySerial(2, 3);
-
-Adafruit_Fingerprint finger = Adafruit_Fingerprint(&mySerial);
+Adafruit_Fingerprint finger = Adafruit_Fingerprint(&Serial1);
 
 void setup()  
 {
@@ -195,3 +189,4 @@ uint8_t getFingerprintEnroll(int id) {
     return p;
   }   
 }
+

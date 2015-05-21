@@ -6,6 +6,9 @@ This is a library for our Optical Fingerprint sensor
 These displays use TTL Serial to communicate, 2 pins are required to  
 interface
 
+**Changed in this fork: lib and examples now use HardwareSerial instead of SoftwareSerial, and 
+support for Arduino v. < 100 removed.**
+
 Adafruit invests time and resources providing this open source code, 
 please support Adafruit and open-source hardware by purchasing 
 products from Adafruit!
@@ -17,3 +20,4 @@ All text above must be included in any redistribution
 To download. click the DOWNLOADS button in the top right corner, rename the uncompressed folder Adafruit_Fingerprint. Check that the Adafruit_Fingerprint folder contains Adafruit_Fingerprint.cpp and Adafruit_Fingerprint.h
 
 Place the Adafruit_Fingerprint library folder your <arduinosketchfolder>/libraries/ folder. You may need to create the libraries subfolder if its your first library. Restart the IDE.
+

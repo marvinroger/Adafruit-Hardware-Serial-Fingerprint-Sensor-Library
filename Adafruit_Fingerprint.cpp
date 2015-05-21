@@ -16,19 +16,8 @@
 
 #include "Adafruit_Fingerprint.h"
 #include <util/delay.h>
-#if (ARDUINO >= 100)
-  #include <SoftwareSerial.h>
-#else
-  #include <NewSoftSerial.h>
-#endif
 
-//static SoftwareSerial mySerial = SoftwareSerial(2, 3);
-
-#if ARDUINO >= 100
-Adafruit_Fingerprint::Adafruit_Fingerprint(SoftwareSerial *ss) {
-#else
-Adafruit_Fingerprint::Adafruit_Fingerprint(NewSoftSerial *ss) {
-#endif
+Adafruit_Fingerprint::Adafruit_Fingerprint(HardwareSerial *ss) {
   thePassword = 0;
   theAddress = 0xFFFFFFFF;
 
@@ -305,4 +294,5 @@ while (true) {
     }
   }
 }
+
 
